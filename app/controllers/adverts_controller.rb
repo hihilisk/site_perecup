@@ -46,8 +46,8 @@ class AdvertsController < ApplicationController
     redirect_to adverts_path
   end
 
-  private
-    def advert_params
-      params.require(:advert).permit(:category_id, :year, :seller, :phone, :url, :price, :vin, :city, :notes, :complectation, :category_id, :owners)
-    end
+    private
+      def advert_params
+        params.require(:advert).permit(:category_id, :year, :seller, :phone, :url, :price, :vin, :city, :notes, :complectation, :category_id, :owners)
+      end
 end
