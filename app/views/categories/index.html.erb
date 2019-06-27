@@ -1,0 +1,19 @@
+<div class="wrap">
+  <h1>Все категории</h1>
+  <%= render 'layouts/nav-menu' %>
+  <%= render 'categories/form/new' %>
+  <table class="basic-table" id="categories">
+    <thead>
+      <th>Производитель</th>
+      <th>Модель</th>
+    </thead>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= link_to category.brand, (category) %></td>
+        <td><%= link_to category.model, (category) %></td>
+        <td><%= button_to 'Редактировать', edit_category_path(category), :method => :get, :class => 'button button-edit' %></td>
+        <td><%= button_to 'Удалить', category_path(category), :method => :delete, data: {confirm: "Вы уверены?"}, :class => 'button button-delete' %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

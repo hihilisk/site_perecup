@@ -1,0 +1,30 @@
+<div class="wrap">
+  <h1>Все чек листы</h1>
+  <%= render 'layouts/nav-menu' %>
+  <table class="basic-table">
+    <thead>
+      <th>Вложения</th>
+      <th>Состояние</th>
+      <th>Обслуживание</th>
+      <th>Красился ли А/М</th>
+      <th>Кузовной ремонт</th>
+      <th>Стоимость</th>
+      <th>Примечания</th>
+      <th>Дата создания</th>
+      <th>Дата редактирования</th>
+    </thead>
+    <% @check_lists.each do |check_list| %>
+      <tr>
+        <td> <%= link_to check_list.spending, (check_list) %> </td>
+        <td> <%= link_to check_list.condicion, (check_list) %> </td>
+        <td> <%= link_to check_list.service, (check_list) %> </td>
+        <td> <%= link_to check_list.painted, (check_list) %> </td>
+        <td> <%= link_to check_list.body_repair, (check_list) %> </td>
+        <td> <%= link_to check_list.price, (check_list) %> </td>
+        <td> <%= link_to check_list.notes, (check_list) %> </td>
+        <td> <%= button_to 'Редактировать', edit_check_list_url(check_list), :method => :get, :class => 'button button-edit' %> </td>
+        <td> <%= button_to 'Удалить', check_list_url(check_list), method: :delete, data: {confirm: 'Вы уверены?'}, :class => 'button button-delete' %> </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

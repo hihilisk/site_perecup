@@ -1,0 +1,46 @@
+<div class="wrap">
+  <h1>Новый чек лист</h1>
+
+  <%= form_for @check_list do |f| %>
+    <table class="table-new">
+      <tr>
+        <td> <%= f.label :'Вложения:' %> </td>
+        <td> <%= f.text_field :spending %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Состояниe:' %> </td>
+        <td> <%= f.text_field :condicion %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Обслуживание:' %> </td>
+        <td> <%= f.text_field :service %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Красился ли А/М:' %> </td>
+        <td> <%= f.text_field :painted %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Кузовной ремонт:' %> </td>
+        <td> <%= f.text_field :body_repair %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Стоимость:' %> </td>
+        <td> <%= f.text_field :price %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Примечания:' %> </td>
+        <td> <%= f.text_area :notes %> </td>
+      </tr>
+      <tr>
+        <td class='table-cell-center' colspan="2">
+          <%= f.submit 'Создать чек-лист', :class => 'button-create' %>
+        </td>
+      </tr>
+      <tr>
+  <% end %>
+        <td class='table-cell-center' colspan="2">
+          <%= button_to 'Назад', check_lists_url, :method => :get, :class => 'button-back' %>
+        </td>
+      </tr>
+    </table>
+</div>

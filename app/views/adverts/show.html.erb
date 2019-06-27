@@ -1,0 +1,6 @@
+<div class="wrap">
+  <h1>Объявление <%= @advert.category_id %></h1>
+  <%= button_to 'Назад', adverts_path, :method => :get %>
+  <%= render 'adverts/form/shoow' %>
+  <%= render 'check_lists/form' %>
+</div>

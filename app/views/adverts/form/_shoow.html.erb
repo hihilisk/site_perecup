@@ -1,0 +1,38 @@
+<div class="show-adverts">
+  <table class="basic-table">
+    <thead>
+    <th>Марка</th>
+    <th>Модель</th>
+    <th>Год выпуска</th>
+    <th>Стоимость</th>
+    <th>Комплектация</th>
+    <th>Владельцы</th>
+    <th>Город</th>
+    <th>Телефон</th>
+    <th>Ссылка</th>
+    <th>Продавец</th>
+    <th>VIN</th>
+    <th>Примечания</th>
+    <th>Дата создания</th>
+    <th>Дата редоктирования</th>
+    </thead>
+    <tr>
+      <td> <%= @advert.category.brand %></td>
+      <td> <%= @advert.category.model %> </td>
+      <td> <%= @advert.year %> </td>
+      <td> <%= @advert.price %> </td>
+      <td> <%= @advert.complectation %> </td>
+      <td> <%= @advert.owners %> </td>
+      <td> <%= @advert.city %> </td>
+      <td> <%= @advert.phone %> </td>
+      <td>
+        <%= button_to 'Link', @advert.url, :class => 'button button-link' %>
+      </td>
+      <td> <%= @advert.seller %> </td>
+      <td> <%= @advert.vin %> </td>
+      <td> <%= @advert.notes %> </td>
+      <td> <%= @advert.created_at.strftime("%m %d %Y") %> </td>
+      <td> <%= @advert.updated_at.strftime("%m %d %Y") %> </td>
+    </tr>
+  </table>
+</div>

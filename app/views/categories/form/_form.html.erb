@@ -1,0 +1,17 @@
+<div class="input-categories-table form">
+  <%= form_for @category do |f| %>
+    <table class="input-table-category">
+      <tr>
+      <td> <%= f.label :'Производитель:' %></td><td><%= f.text_field :brand %> </td>
+      </tr>
+      <tr>
+      <td> <%= f.label :'Модель:' %> </td><td> <%= f.text_field :model %> </td>
+      </tr>
+      <tr>
+      <td class="table-cell-center" colspan="2">
+        <%= f.submit 'Сохранить', :class => 'button-save-edit' %>
+      </td>
+      </tr>
+    </table>
+  <% end %>
+</div>

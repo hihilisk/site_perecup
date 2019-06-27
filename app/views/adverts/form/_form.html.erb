@@ -1,0 +1,66 @@
+<div class="input-advetrts-table table">
+  <div class="advert-error-msg">
+    <% if @advert.errors.any? %>
+      <h2>При сохранении объявления возникли следующие проблемы:</h2>
+      <ul>
+        <% @advert.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+  <%= form_for @advert do |f| %>
+    <table class="table-edit">
+      <tr>
+        <td> <%= f.label :"Марка" %> </td>
+        <td> <%= f.select :category_id, @categories.map{ |c| [c.brand_model, c.id] } %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Год выпуска:' %> </td>
+        <td> <%= f.text_field :year %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Стоимость:' %> </td>
+        <td> <%= f.text_field :price %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Комплектация:' %> </td>
+        <td> <%= f.text_field :complectation %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Владельцы:' %> </td>
+        <td> <%= f.text_field :owners %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Город:' %> </td>
+        <td> <%= f.text_field :city %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Телефон:' %> </td>
+        <td> <%= f.text_field :phone %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Ссылка:' %> </td>
+        <td> <%= f.text_field :url %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Продавец:' %> </td>
+        <td> <%= f.text_field :seller %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'VIN:' %> </td>
+        <td> <%= f.text_field :vin %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Примечания:' %> </td>
+        <td> <%= f.text_area :notes %> </td>
+      </tr>
+      <tr>
+        <td class="table-cell-center" colspan="2">
+          <%= f.submit 'Сохранить', :class => 'button-save-edit' %>
+  <% end %>
+          <%= button_to 'Назад', adverts_path, :method => :get %>
+        </td>
+      </tr>
+    </table>
+</div>

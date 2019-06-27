@@ -1,0 +1,45 @@
+<div class="wrap">
+  <h1>Редактирование чек листа</h1>
+  <%= form_for @check_list do |f| %>
+    <table class="basic-table table-edit">
+      <tr>
+        <td> <%= f.label :'Вложения:' %> </td>
+        <td> <%= f.select(:spending, ['Не требует', 'Незначительные', 'Средне','Большие'], {include_blank: 'Выбери пункт'}) %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Состояниe:' %> </td>
+        <td> <%= f.select(:condicion, ['Отличное','Хорошее', 'Среднее', 'Плохое', "Ведро с гайками"], {include_blank: 'Выбери пункт'}) %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Обслуживание:' %> </td>
+        <td> <%= f.select(:service, ['Есть сервисная книжка', 'Регулярное', 'Периодическое', 'Эпизодическео'] ) %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Красился ли А/М:' %> </td>
+        <td> <%= f.select(:painted, ['Не крашен', 'Кузовные элементы', 'Кузом целиком']) %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Кузовной ремонт:' %> </td>
+        <td> <%= f.select(:body_repair, ['Не ремонтировался', 'Вытягивались элементы', 'Менялись элементы', 'Вытягивался силовой каркас']) %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Стоимость:' %> </td>
+        <td> <%= f.text_field :price %> </td>
+      </tr>
+      <tr>
+        <td> <%= f.label :'Примечания:' %> </td>
+        <td> <%= f.text_area :notes %> </td>
+      </tr>
+      <tr>
+        <td class='table-cell-center' colspan="2">
+          <%= f.submit 'Сохранить изменения', :class => 'button-save-edit' %>
+        </td>
+      </tr>
+      <tr>
+  <% end %>
+  <td class='table-cell-center' colspan="2">
+    <%= button_to 'Назад', check_lists_url, :method => :get, :class => 'button-back' %>
+  </td>
+  </tr>
+    </table>
+</div>

@@ -1,0 +1,8 @@
+<div class="nav-menu">
+  <table>
+<!--    <tr><%#= link_to 'Объявления', adverts_path %></tr>-->
+    <tr><%= button_to 'Объявления', adverts_path, :method => :get %></tr>
+    <tr><%= button_to 'Категории', categories_path, :method => :get %></tr>
+    <tr><%= button_to 'Чек листы', check_lists_path, :method => :get %></tr>
+  </table>
+</div>

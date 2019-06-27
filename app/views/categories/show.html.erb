@@ -1,0 +1,25 @@
+<div class="wrap">
+  <h1>Категория <%= @category.brand %></h1>
+
+  <table class="basic-table">
+    <tr>
+      <td> Производитель: </td>
+      <td> <%= @category.brand %> </td>
+    </tr>
+    <tr>
+      <td> Модель: </td>
+      <td> <%= @category.model %> </td>
+    </tr>
+    <tr>
+      <td colspan="2" class="table-cell-center">
+        <%= button_to 'Редактировать', edit_category_url(@category), :method => :get, :class => 'button-edit' %>
+        <%= button_to 'Удалить', category_url(@category), method: :delete, data: {confirm: 'Вы уверены?'}, :class => 'button-delete' %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" class="table-cell-center">
+        <%= button_to 'Назад', categories_url(@category), :method => :get, :class => 'button-back' %>
+      </td>
+    </tr>
+  </table>
+</div>

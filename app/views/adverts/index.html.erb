@@ -1,0 +1,6 @@
+<div class="wrap">
+  <h1>Все объявления</h1>
+  <%= render 'layouts/nav-menu' %>
+  <%= button_to 'Создать объявление', new_advert_url, :method => :get, :class => 'button-link-create' %>
+  <%= render 'adverts/form/index' %>
+</div>

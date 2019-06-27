@@ -1,0 +1,45 @@
+<div class="list-all-adverts">
+  <table class="basic-table" id="adverds">
+    <thead>
+    <th>Марка</th>
+    <th>Модель</th>
+    <th>Год выпуска</th>
+    <th>Стоимость</th>
+    <th>Комплектация</th>
+    <th>Владельцы</th>
+    <th>Город</th>
+    <th>Телефон</th>
+    <th>Ссылка</th>
+    <th>Продавец</th>
+    <th>VIN</th>
+    <th>Примечания</th>
+    <th>Дата создания</th>
+    <th>Дата редоктирования</th>
+    <th colspan="2">Действия</th>
+    </thead>
+    <% @advert.each do |advert| %>
+      <tr>
+        <td> <%= link_to advert.category.brand, (advert) %></td>
+        <td> <%= link_to advert.category.model, (advert) %> </td>
+        <td> <%= link_to advert.year, (advert) %> </td>
+        <td> <%= link_to advert.price, (advert) %> </td>
+        <td> <%= link_to advert.complectation, (advert) %> </td>
+        <td> <%= link_to advert.owners, (advert) %> </td>
+        <td> <%= link_to advert.city, (advert) %> </td>
+        <td> <%= link_to advert.phone, (advert) %> </td>
+        <td>
+        <form action="<%=advert.url%>">
+          <button type="submit">Link</button>
+        </form>
+        </td>
+        <td> <%= link_to advert.seller, (advert) %> </td>
+        <td> <%= link_to advert.vin %>, (advert) </td>
+        <td> <%= link_to advert.notes, (advert) %> </td>
+        <td> <%= link_to advert.created_at.strftime("%m %d %Y"), (advert) %> </td>
+        <td> <%= link_to advert.updated_at.strftime("%m %d %Y"), (advert) %> </td>
+        <td> <%= button_to 'Edit', edit_advert_path(advert), :method => :get, :class => 'button button-edit' %> </td>
+        <td> <%= button_to 'Delete', advert_path(advert), method: :delete, data: {confirm: 'Вы уверены?'}, :class => 'button button-delete' %> </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
